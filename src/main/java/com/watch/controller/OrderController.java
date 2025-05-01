@@ -1,6 +1,8 @@
 package com.watch.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.watch.services.OrderService;
@@ -17,10 +19,10 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping
-    public Orders placeOrder(@RequestBody Orders order) {
-        return orderService.placeOrder(order);
+    public ResponseEntity<Orders> placeOrder(@RequestBody Orders order) {
+        Orders savedOrder = orderService.placeOrder(order);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedOrder);
     }
-
     @GetMapping("/{id}")
     public Optional<Orders> getOrderById(@PathVariable Long id) {
         return orderService.getOrderById(id);

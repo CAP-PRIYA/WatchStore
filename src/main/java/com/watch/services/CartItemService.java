@@ -54,5 +54,10 @@ public class CartItemService {
         }
         return null;
     }
+
+    // delete by id
+	public void deleteCartItem(Long id) {
+		cartItemRepository.deleteById(id);
+	}
 }
 

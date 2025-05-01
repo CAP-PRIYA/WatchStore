@@ -3,6 +3,8 @@ package com.watchApp.pojo;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,16 +24,22 @@ public class Orders {
 	private Long id;
 
 	@ManyToOne
-	@Column(name = "customer_id")
+	@JoinColumn(name = "customer_id")
 	private Customers customer;
+	
+	@ManyToOne
+	@JoinColumn(name = "watch_id")
+	private Watches watch;
 
-	@Column(name = "orderDate")
+	@JsonProperty("order_date")
+	@Column(name = "order_date")
 	private LocalDateTime orderDate;
 
 	@Transient
 	private List<Watches> watches;
 	  
-	@Column(name = "totalAmount")
+	@JsonProperty("total_amount")
+	@Column(name = "total_amount")
 	private Double totalAmount;
 
 }

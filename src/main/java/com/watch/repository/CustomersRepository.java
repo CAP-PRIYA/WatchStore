@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.watchApp.pojo.Customers;
 
-@Repository
+
 public interface CustomersRepository extends JpaRepository<Customers, Long> {
 
     // Find customer by email

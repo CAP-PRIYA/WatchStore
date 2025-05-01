@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.watchApp.pojo.Orders;
 
-@Repository
+
 public interface OrdersRepository extends JpaRepository<Orders, Long> {
 
 

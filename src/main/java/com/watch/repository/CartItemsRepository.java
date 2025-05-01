@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.watchApp.pojo.CartItems;
 
-@Repository
+
 public interface  CartItemsRepository extends JpaRepository<CartItems, Long> {
 
     // Get all items in a customer's cart

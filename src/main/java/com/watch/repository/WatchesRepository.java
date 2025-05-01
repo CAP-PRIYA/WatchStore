@@ -7,7 +7,7 @@ import com.watchApp.pojo.Watches;
 
 import java.util.List;
 
-@Repository
+
 public interface WatchesRepository extends JpaRepository<Watches, Long> {
 
     // Get Watcheses by brand
